@@ -83,6 +83,7 @@ footer {
     margin-top: 20px;
 }
 
+/* Experience Section Styling */
 .experience {
     background: #f9f9f9;
     padding: 20px;
@@ -103,13 +104,6 @@ footer {
     margin: 0;
     color: #555;
     line-height: 1.5;
-}
-
-/* Center Content */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
 }
 
 /* Pool Gallery Grid */
@@ -161,7 +155,7 @@ header h1, header p {
     margin-bottom: 20px;
 }
 
-/* Form Styling (Contact Form) */
+/* Contact Form Styling */
 form {
     max-width: 600px;
     margin: 20px auto;
@@ -190,11 +184,50 @@ form button {
     color: white;
     border: none;
     padding: 10px 20px;
-    font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
 }
 
 form button:hover {
     background-color: #00796b;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        padding: 30px 15px;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    .intro {
+        font-size: 16px;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    form input, form textarea {
+        padding: 8px;
+    }
+
+    form button {
+        width: 100%;
+    }
+
+    footer {
+        padding: 10px;
+    }
 }
