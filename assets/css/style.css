@@ -256,3 +256,21 @@ form button:hover {
         position: relative;
         z-index: 2;
     }
+
+.hero-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 24px;
+    background-color: #009688;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: #00796b;
+}
+    
