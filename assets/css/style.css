@@ -435,3 +435,17 @@ section {
     font-weight: bold;
     cursor: pointer;
 }
+/* Page Transition */
+body {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

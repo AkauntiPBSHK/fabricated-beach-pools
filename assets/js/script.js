@@ -64,3 +64,16 @@ function closeLightbox() {
 document.querySelectorAll('.pool-item img').forEach(img => {
     img.addEventListener('click', () => openLightbox(img.src));
 });
+// Add fade-out effect when leaving a page
+document.querySelectorAll('a').forEach(link => {
+    if (link.hostname === window.location.hostname && link.href !== window.location.href) {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const destination = link.href;
+            document.body.style.opacity = 0;
+            setTimeout(() => {
+                window.location.href = destination;
+            }, 300); // Matches the animation time
+        });
+    }
+});
