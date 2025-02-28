@@ -294,3 +294,22 @@ form button:hover {
 section {
     margin-bottom: 30px;
 }
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #009688;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    z-index: 1000;
+    font-size: 14px;
+}
+
+.back-to-top:hover {
+    background-color: #00796b;
+}
