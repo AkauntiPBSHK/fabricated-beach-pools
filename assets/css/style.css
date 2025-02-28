@@ -365,3 +365,44 @@ section {
         font-size: 16px;
     }
 }
+/* Hide the menu toggle by default */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #009688;
+    color: white;
+    text-align: center;
+}
+
+/* Mobile view: Show the hamburger, hide the menu by default */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        background-color: #009688;
+        width: 100%;
+        padding: 15px 0;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        z-index: 1000;
+    }
+
+    nav ul.show-menu {
+        display: flex; /* Show menu when toggled */
+    }
+
+    nav a {
+        font-size: 18px;
+        padding: 10px 0;
+    }
+}
