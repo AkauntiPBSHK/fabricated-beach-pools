@@ -5,19 +5,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (contactForm) {
         contactForm.addEventListener('submit', function (event) {
-            event.preventDefault(); // Stop actual submission
+            event.preventDefault(); // Prevent page reload
 
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const message = document.getElementById('message').value.trim();
-            const formMessage = document.getElementById('formMessage'); // This is the thank-you message
+            const formMessage = document.getElementById('formMessage');
 
             if (name === '' || email === '' || message === '') {
                 alert('Please fill in all fields before submitting.');
                 return;
             }
 
-            // If all fields are filled, show the thank-you message
+            // Show thank-you message
             formMessage.style.display = 'block';
 
             // Clear form fields (optional)

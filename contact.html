@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Fabricated Beach Pools to design your private tropical paradise.">
     <title>Contact Us - Fabricated Beach Pools</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -30,15 +29,22 @@
     <input type="email" id="email" name="email" required><br>
 
     <label for="message">Message:</label><br>
-    <textarea id="message" name="message" rows="5"></textarea><br>
+    <textarea id="message" name="message" rows="5" required></textarea><br>
 
     <button type="submit">Send</button>
-    <p id="formMessage" style="display:none; color:green; margin-top:10px;">Thank you! Your message has been sent.</p>
+
+    <!-- Thank-you message (hidden by default) -->
+    <p id="formMessage" style="display:none; color:green; margin-top:10px;">
+        Thank you! Your message has been sent.
+    </p>
 </form>
 
 <footer>
     <p>&copy; 2025 Fabricated Beach Pools</p>
 </footer>
+
+<!-- Make sure this script is linked correctly -->
+<script src="assets/js/script.js"></script>
 
 </body>
 </html>
