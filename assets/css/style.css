@@ -260,17 +260,17 @@ form button:hover {
 .hero-button {
     display: inline-block;
     margin-top: 15px;
-    padding: 12px 24px;
-    background-color: #009688;
+    padding: 15px 30px;
+    background-color: #004d40;
     color: white;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .hero-button:hover {
     background-color: #00796b;
+    transform: translateY(-2px); /* Slight lift effect */
 }
-    
