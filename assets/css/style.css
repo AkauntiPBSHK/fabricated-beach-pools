@@ -268,9 +268,11 @@ form button:hover {
     border-radius: 8px;
     font-size: 18px;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    position: relative; /* This helps make sure it's above background images */
+    z-index: 10; /* Ensures it's on top */
 }
 
 .hero-button:hover {
     background-color: #00796b;
-    transform: translateY(-2px); /* Slight lift effect */
+    transform: translateY(-2px);
 }
