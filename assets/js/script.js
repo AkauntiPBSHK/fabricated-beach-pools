@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Welcome to Fabricated Beach Pools!");
 
+    // Contact Form Handling
     const contactForm = document.getElementById('contactForm');
 
     if (contactForm) {
@@ -24,7 +25,25 @@ document.addEventListener('DOMContentLoaded', () => {
             contactForm.reset();
         });
     }
+
+    // Fade-in Sections
+    const sections = document.querySelectorAll('section');
+
+    const revealSections = () => {
+        sections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (sectionTop < windowHeight - 100) {
+                section.classList.add('visible');
+            }
+        });
+    };
+
+    revealSections(); // Run on page load
+    window.addEventListener('scroll', revealSections);
 });
+
 // Show Back to Top button when scrolling down
 window.onscroll = function() {
     const backToTopButton = document.getElementById("backToTop");
@@ -43,11 +62,13 @@ function scrollToTop() {
     });
 }
 
+// Mobile Menu Toggle
 function toggleMenu() {
     const navMenu = document.querySelector('nav ul');
     navMenu.classList.toggle('show-menu');
 }
-// Open Lightbox
+
+// Lightbox Feature
 function openLightbox(src) {
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightbox-image');
@@ -55,16 +76,15 @@ function openLightbox(src) {
     lightbox.style.display = 'flex';
 }
 
-// Close Lightbox
 function closeLightbox() {
     document.getElementById('lightbox').style.display = 'none';
 }
 
-// Add click event to all pool images
 document.querySelectorAll('.pool-item img').forEach(img => {
     img.addEventListener('click', () => openLightbox(img.src));
 });
-// Add fade-out effect when leaving a page
+
+// Smooth Page Transition on Navigation
 document.querySelectorAll('a').forEach(link => {
     if (link.hostname === window.location.hostname && link.href !== window.location.href) {
         link.addEventListener('click', (e) => {
