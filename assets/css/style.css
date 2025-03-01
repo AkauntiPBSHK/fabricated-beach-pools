@@ -93,20 +93,6 @@ header::before {
     background: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
-
-.header-circle {
-    position: absolute;
-    top: 30%;
-    left: 30%;
-    transform: translate(-30%, -30%);
-    width: 60%;
-    height: 60%;
-    border-radius: 50%;
-    background: rgba(130, 255, 226, 0.1);
-    backdrop-filter: blur(10px);
-    z-index: 1;
-    pointer-events: none; /* So you can still click buttons */
-}
 /* ==================================
    3. Navbar
 ================================== */
