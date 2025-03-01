@@ -391,7 +391,7 @@ footer img {
     z-index: 1; /* Ensures text stays above overlay */
 }
 
-.why-choose-section {
+.why-choose-us {
     background: url('../images/beach-pool.jpg') no-repeat center center/cover;
     background-size: cover;
     background-position: center;
