@@ -390,3 +390,15 @@ footer img {
     position: relative;
     z-index: 1; /* Ensures text stays above overlay */
 }
+
+.why-choose-section {
+    background: url('../images/beach-pool.jpg') no-repeat center center/cover;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Optional for parallax effect */
+    padding: 60px 20px;
+    color: white;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding doesn’t mess with width */
+}
