@@ -1,24 +1,77 @@
-/* Basic Reset */
+/* ==================================
+   1. Basic Reset & General Styles
+================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body Styling */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f0f8ff;
     color: #333;
     padding: 0 15px;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
 }
 
-html {
-    scroll-behavior: smooth;
+/* ==================================
+   2. Header & Hero Section
+================================== */
+header {
+    position: relative;
+    text-align: center;
+    padding: 50px 20px;
+    background: url('../images/beach-header.jpg') no-repeat center center/cover;
+    color: white;
 }
 
-/* Navbar Styling */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+header h1, header p {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 20px;
+}
+
+.hero-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 15px 30px;
+    background-color: #004d40;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    position: relative;
+    z-index: 10;
+}
+
+.hero-button:hover {
+    background-color: #00796b;
+    transform: translateY(-2px);
+}
+
+/* ==================================
+   3. Navbar
+================================== */
 nav {
     background-color: #009688;
     padding: 15px 0;
@@ -39,79 +92,83 @@ nav a {
     color: white;
     font-weight: bold;
     font-size: 16px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 nav a:hover {
+    transform: translateY(-2px);
+    color: #f0f8ff;
     text-decoration: underline;
 }
 
-/* Header Styling */
-header {
-    text-align: center;
-    padding: 50px 20px;
-    background: url('../images/beach-header.jpg') no-repeat center center/cover;
+/* Hamburger Menu for Mobile */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #009688;
     color: white;
+    text-align: center;
 }
 
-header h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
+/* Mobile Menu */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        background-color: #009688;
+        width: 100%;
+        padding: 15px 0;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        z-index: 1000;
+    }
+
+    nav ul.show-menu {
+        display: flex;
+    }
+
+    nav a {
+        font-size: 18px;
+        padding: 10px 0;
+    }
 }
 
-/* Section Styling */
+/* ==================================
+   4. Sections (General)
+================================== */
 section {
-    padding: 30px;
-    text-align: center;
-}
-
-section h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-section ul li {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-/* Footer Styling */
-footer {
-    text-align: center;
-    padding: 15px;
-    background-color: #004d40;
-    color: white;
-    margin-top: 20px;
-}
-
-/* Experience Section Styling */
-.experience {
-    background: #f9f9f9;
-    padding: 20px;
+    padding: 40px 20px;
     margin: 20px auto;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    max-width: 800px;
-    text-align: left;
+    max-width: 1200px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.experience h2 {
-    margin: 0 0 10px;
-    color: #009688;
-    font-size: 22px;
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.experience p {
-    margin: 0;
+.intro {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 18px;
     color: #555;
-    line-height: 1.5;
 }
 
-/* Pool Gallery Grid */
+/* ==================================
+   5. Pool Gallery
+================================== */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -134,393 +191,22 @@ footer {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-.pool-item h3 {
-    margin: 10px 0;
-    color: #009688;
-    font-size: 18px;
+.pool-item img:hover {
+    transform: scale(1.05);
 }
 
-.pool-item p {
-    color: #555;
-    font-size: 14px;
-}
-
-/* Intro Section */
-.intro {
-    text-align: center;
-    margin: 20px 0;
-    font-size: 18px;
-    color: #555;
-}
-
-/* Header Spacing */
-header h1, header p {
-    margin-bottom: 20px;
-}
-
-/* Contact Form Styling */
-form {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
-
-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-form input, form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-form button {
-    background-color: #009688;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-form button:hover {
-    background-color: #00796b;
-}
-
-/* Responsive Design for Mobile */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .gallery {
-        grid-template-columns: 1fr;
-    }
-
-    header {
-        padding: 30px 15px;
-    }
-
-    section {
-        padding: 15px;
-    }
-
-    .intro {
-        font-size: 16px;
-    }
-
-    form {
-        padding: 15px;
-    }
-
-    form input, form textarea {
-        padding: 8px;
-    }
-
-    form button {
-        width: 100%;
-    }
-
-    footer {
-        padding: 10px;
-    }
-    footer p {
-        margin: 5px 0;
-    }
-    
-    footer img {
-        vertical-align: middle;
-        width: 20px;
-        height: 20px;
-    }    
-}
-    header {
-        position: relative;
-        text-align: center;
-        padding: 50px 20px;
-        background: url('../images/beach-header.jpg') no-repeat center center/cover;
-        color: white;
-    }
-    
-    /* Add a dark overlay on all headers */
-    header::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.4); /* This adds the dark tint */
-        z-index: 1;
-    }
-    
-    /* Make sure the text is on top of the overlay */
-    header h1, header p {
-        position: relative;
-        z-index: 2;
-    }
-
-.hero-button {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 15px 30px;
-    background-color: #004d40;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 8px;
-    font-size: 18px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    position: relative; /* This helps make sure it's above background images */
-    z-index: 10; /* Ensures it's on top */
-}
-
-.hero-button:hover {
-    background-color: #00796b;
-    transform: translateY(-2px);
-}
-
-section {
-    margin-bottom: 30px;
-}
-
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #009688;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: none; /* Hidden by default */
-    z-index: 1000;
-    font-size: 14px;
-}
-
-.back-to-top:hover {
-    background-color: #00796b;
-}
-/* Mobile-Friendly Adjustments */
-@media (max-width: 768px) {
-
-    /* Navbar - Stack vertically for mobile */
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    /* Navbar Links - Add more padding for easier tapping */
-    nav a {
-        font-size: 18px;
-        padding: 10px 0;
-    }
-
-    /* Body Padding - More breathing room on mobile */
-    body {
-        padding: 0 10px;
-    }
-
-    /* Sections - Reduce padding */
-    section {
-        padding: 20px 10px;
-    }
-
-    /* Gallery Grid - 1 column on small screens */
-    .gallery {
-        grid-template-columns: 1fr;
-    }
-
-    /* Hero Header - Adjust text for small screens */
-    header h1 {
-        font-size: 28px;
-    }
-
-    header p {
-        font-size: 16px;
-    }
-
-    /* Hero Button - Bigger for easier tapping */
-    .hero-button {
-        padding: 12px 20px;
-        font-size: 16px;
-    }
-
-    /* Back to Top Button - Slightly larger */
-    .back-to-top {
-        padding: 12px 18px;
-        font-size: 16px;
-    }
-}
-/* Hide the menu toggle by default */
-.menu-toggle {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
-    padding: 10px;
-    background-color: #009688;
-    color: white;
+/* ==================================
+   6. Testimonials
+================================== */
+.testimonials-section {
+    background-color: #86c3f8;
+    padding: 50px 20px;
     text-align: center;
 }
 
-/* Mobile view: Show the hamburger, hide the menu by default */
-@media (max-width: 768px) {
-
-    .menu-toggle {
-        display: block;
-    }
-
-    nav ul {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        background-color: #009688;
-        width: 100%;
-        padding: 15px 0;
-        position: absolute;
-        top: 50px;
-        left: 0;
-        z-index: 1000;
-    }
-
-    nav ul.show-menu {
-        display: flex; /* Show menu when toggled */
-    }
-
-    nav a {
-        font-size: 18px;
-        padding: 10px 0;
-    }
-}
-/* Lightbox Styles */
-.lightbox {
-    display: none;
-    position: fixed;
-    z-index: 1001;
-    padding-top: 50px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    justify-content: center;
-    align-items: center;
-}
-
-.lightbox-image {
-    max-width: 90%;
-    max-height: 80%;
-}
-
-.close-lightbox {
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    color: white;
-    font-size: 30px;
-    font-weight: bold;
-    cursor: pointer;
-}
-/* Page Transition */
-body {
-    opacity: 0;
-    animation: fadeIn 0.5s forwards;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-.cta-section {
-    background-color: #009688;
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-    margin: 30px 0;
-    border-radius: 8px;
-}
-
-.cta-section h2 {
-    font-size: 28px;
-    margin-bottom: 10px;
-}
-
-.cta-section p {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.cta-button {
-    background-color: #004d40;
-    color: white;
-    text-decoration: none;
-    padding: 12px 25px;
-    font-size: 18px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.cta-button:hover {
-    background-color: #00796b;
-}
-/* Testimonials Section */
-.testimonials {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #f0f8ff;
-    margin: 30px 0;
-}
-
-.testimonials h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #009688;
-}
-
-.testimonial {
-    background: white;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 700px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.testimonial p {
-    font-style: italic;
-    font-size: 18px;
-    color: #555;
-}
-
-.testimonial h4 {
-    margin-top: 10px;
-    font-weight: bold;
-    color: #009688;
-}
-section {
-    padding: 40px 20px;
-    margin: 20px auto;
-    max-width: 1200px;
-}
 .testimonial {
     background: white;
     border: 1px solid #ddd;
@@ -541,19 +227,84 @@ section {
     color: #009688;
     text-align: right;
 }
-.testimonials-section {
-    background-color: #86c3f8;
-    padding: 50px 20px;
+
+/* ==================================
+   7. Call to Action
+================================== */
+.cta-section {
+    background-color: #009688;
+    color: white;
+    padding: 40px 20px;
     text-align: center;
-}
-/* Fade-in animation for sections */
-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    margin: 30px 0;
+    border-radius: 8px;
 }
 
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
+.cta-button {
+    background-color: #004d40;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #00796b;
+}
+
+/* ==================================
+   8. Back to Top Button
+================================== */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #009688;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+    font-size: 14px;
+}
+
+.back-to-top:hover {
+    background-color: #00796b;
+}
+
+/* ==================================
+   9. Footer
+================================== */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #004d40;
+    color: white;
+    margin-top: 20px;
+}
+
+footer img {
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+}
+
+/* ==================================
+   10. Page Transition Animation
+================================== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ==================================
+   11. Responsive Tweaks
+================================== */
+@media (max-width: 768px) {
+    .gallery { grid-template-columns: 1fr; }
+    section { padding: 20px 10px; }
+    .hero-button, .back-to-top { font-size: 16px; }
 }
