@@ -516,3 +516,33 @@ body {
     font-weight: bold;
     color: #009688;
 }
+section {
+    padding: 40px 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+.testimonial {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    font-style: italic;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.testimonial strong {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #009688;
+    text-align: right;
+}
+.testimonials-section {
+    background-color: #f0f8ff;
+    padding: 50px 20px;
+    text-align: center;
+}
