@@ -308,3 +308,33 @@ footer img {
     section { padding: 20px 10px; }
     .hero-button, .back-to-top { font-size: 16px; }
 }
+.not-found {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #f0f8ff;
+}
+
+.not-found h1 {
+    font-size: 36px;
+    color: #009688;
+    margin-bottom: 15px;
+}
+
+.not-found p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.not-found .hero-button {
+    padding: 12px 25px;
+    font-size: 18px;
+    background-color: #009688;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.not-found .hero-button:hover {
+    background-color: #00796b;
+}
