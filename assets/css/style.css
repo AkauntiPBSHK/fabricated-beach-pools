@@ -364,17 +364,22 @@ footer img {
 }
 .why-choose-us {
     background: url('../images/beach-pool.jpg') no-repeat center center/cover;
-    color: white;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     padding: 60px 20px;
+    color: white;
     text-align: center;
     position: relative;
-    z-index: 1;
-    width: 100%; /* Ensure it stretches full width */
-    min-height: 400px; /* Ensure it has decent height */
-    box-sizing: border-box; /* Padding counts inside */
-    margin: 0; /* Make sure there's no outer spacing */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
+/* Add a dark overlay */
 .why-choose-us::before {
     content: "";
     position: absolute;
@@ -382,23 +387,36 @@ footer img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
-    z-index: 0;
+    background: rgba(0, 0, 0, 0.5); /* Darker overlay for better contrast */
+    z-index: 1;
 }
 
-.why-choose-us * {
+/* Text container (with semi-transparent background) */
+.why-choose-content {
     position: relative;
-    z-index: 1; /* Ensures text stays above overlay */
+    z-index: 2; /* Above the overlay */
+    background: rgba(0, 0, 0, 0.6); /* Dark background behind text */
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 800px;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    text-align: center;
 }
 
-.why-choose-us {
-    background: url('../images/beach-pool.jpg') no-repeat center center/cover;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Optional for parallax effect */
-    padding: 60px 20px;
-    color: white;
-    text-align: center;
-    width: 100%;
-    box-sizing: border-box; /* Ensures padding doesn’t mess with width */
+/* Headline styling */
+.why-choose-content h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+/* List styling */
+.why-choose-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.why-choose-content li {
+    font-size: 18px;
+    margin-bottom: 10px;
 }
