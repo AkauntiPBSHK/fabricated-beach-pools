@@ -25,13 +25,64 @@ body {
    2. Header & Hero Section
 ================================== */
 header {
+    height: 100vh; /* Full screen height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: relative;
     text-align: center;
-    padding: 50px 20px;
+    padding: 20px;
     background: url('../images/beach-header.jpg') no-repeat center center/cover;
     color: white;
+    overflow: hidden; /* Ensures no scrollbars */
 }
 
+header h1 {
+    font-size: 48px;
+    margin: 10px 0;
+    z-index: 2; /* Above overlay */
+    text-transform: uppercase; /* Optional for a more premium look */
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    z-index: 2; /* Above overlay */
+    max-width: 600px; /* Keeps text nicely centered */
+    line-height: 1.6;
+}
+
+/* Hero Button */
+.hero-button {
+    padding: 15px 40px;
+    font-size: 20px;
+    background-color: #00bfa5;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 2;
+    animation: floatButton 3s ease-in-out infinite; /* Floating animation */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Subtle depth */
+}
+
+.hero-button:hover {
+    transform: scale(1.1);
+    background-color: #00796b;
+}
+
+/* Floating Animation (global) */
+@keyframes floatButton {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+/* Dark overlay for better readability */
 header::before {
     content: "";
     position: absolute;
@@ -39,34 +90,8 @@ header::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1;
-}
-
-header h1, header p {
-    position: relative;
-    z-index: 2;
-    margin-bottom: 20px;
-}
-
-.hero-button {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 15px 30px;
-    background-color: #004d40;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 8px;
-    font-size: 18px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    position: relative;
-    z-index: 10;
-}
-
-.hero-button:hover {
-    background-color: #00796b;
-    transform: translateY(-2px);
 }
 
 /* ==================================
