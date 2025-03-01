@@ -376,3 +376,44 @@ footer img {
 .not-found .hero-button:hover {
     background-color: #00796b;
 }
+.why-choose-us {
+    background: url('../images/beach-pool.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.why-choose-us::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Optional dark overlay for readability */
+    z-index: 0;
+}
+
+.why-choose-us * {
+    position: relative;
+    z-index: 1; /* Ensure text sits above the background */
+}
+
+.why-choose-us h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.why-choose-us ul {
+    list-style: none;
+    padding: 0;
+}
+
+.why-choose-us li {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
