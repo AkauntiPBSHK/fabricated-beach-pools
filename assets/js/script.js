@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("Welcome to Fabricated Beach Pools!");
+    console.log("Welcome to BioPool!");
 
     // Contact Form Handling
     const contactForm = document.getElementById('contactForm');
