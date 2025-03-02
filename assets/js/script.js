@@ -1,12 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const backToTopButton = document.getElementById('backToTop');
+    console.log("Welcome to BioPool!");
 
-    if (backToTopButton) {
-        backToTopButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
     // Contact Form Handling
     const contactForm = document.getElementById('contactForm');
 
@@ -47,12 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     revealSections(); // Run on page load
-    let scrollTimeout;
-    window.addEventListener('scroll', () => {
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(revealSections, 100);
-    });
-    
+    window.addEventListener('scroll', revealSections);
 });
 
 // Show Back to Top button when scrolling down
@@ -65,10 +54,13 @@ window.onscroll = function() {
     }
 };
 
-// Automatically hook up back-to-top button
-document.getElementById('backToTop')?.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-});
+// Function to scroll back to top
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
 
 // Mobile Menu Toggle
 function toggleMenu() {
