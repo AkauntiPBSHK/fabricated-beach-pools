@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("Welcome to BioPool!");
+
     // Contact Form Handling
     const contactForm = document.getElementById('contactForm');
 
@@ -39,21 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     revealSections(); // Run on page load
-
-    // Improved performance - debounce scroll event
-    let scrollTimeout;
-    window.addEventListener('scroll', () => {
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(revealSections, 100);
-    });
-
-    // Back to Top Button with Smooth Scroll
-    const backToTopButton = document.getElementById("backToTop");
-    if (backToTopButton) {
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
+    window.addEventListener('scroll', revealSections);
 });
 
 // Show Back to Top button when scrolling down
@@ -65,3 +53,47 @@ window.onscroll = function() {
         backToTopButton.style.display = "none";
     }
 };
+
+// Function to scroll back to top
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+// Mobile Menu Toggle
+function toggleMenu() {
+    const navMenu = document.querySelector('nav ul');
+    navMenu.classList.toggle('show-menu');
+}
+
+// Lightbox Feature
+function openLightbox(src) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    lightboxImage.src = src;
+    lightbox.style.display = 'flex';
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+}
+
+document.querySelectorAll('.pool-item img').forEach(img => {
+    img.addEventListener('click', () => openLightbox(img.src));
+});
+
+// Smooth Page Transition on Navigation
+document.querySelectorAll('a').forEach(link => {
+    if (link.hostname === window.location.hostname && link.href !== window.location.href) {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const destination = link.href;
+            document.body.style.opacity = 0;
+            setTimeout(() => {
+                window.location.href = destination;
+            }, 300); // Matches the animation time
+        });
+    }
+});

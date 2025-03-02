@@ -2,33 +2,93 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Our Pools - Fabricated Beach Pools</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover Fabricated Beach Pools - custom tropical retreats built anywhere. Explore private pools, experiences, and more.">
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="our pools, fabricated beach pools, custom pools gallery, tropical pools, Albania private pools">
+    <!-- Open Graph for Social Media Previews -->
+    <meta property="og:title" content="Explore Our Custom Tropical Pools">
+    <meta property="og:description" content="Browse our gallery of custom beach pools — perfect for private getaways, events, and luxury experiences.">
+    <meta property="og:image" content="https://akauntipbshk.github.io/fabricated-beach-pools/assets/images/pool1.jpg">
+    <meta property="og:url" content="https://akauntipbshk.github.io/fabricated-beach-pools/pools.html">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="assets/images/beach-header.jpg">
+    <title>Fabricated Beach Pools</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/js/script.js" defer></script>
-</head>
+    <link rel="icon" href="https://akauntipbshk.github.io/fabricated-beach-pools/favicon.ico" type="image/x-icon">
+</head>    
 <body>
 
+<nav>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="pools.html">Our Pools</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+
 <header>
-    <nav class="navbar">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="pools.html" class="active">Our Pools</a>
-        <a href="experiences.html">Experiences</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+    <h1>Our Custom Beach Pools</h1>
+    <p>Explore our portfolio of private, tropical-inspired beach pools — built anywhere you can imagine.</p>
 </header>
 
-<section class="content-section">
-    <h1>Our Pools</h1>
-    <div class="gallery">
-        <div class="card"><img src="assets/images/pool3.jpg" alt="Pool 3"></div>
-        <div class="card"><img src="assets/images/pool4.jpg" alt="Pool 4"></div>
+<section class="intro">
+    <p>Each of our fabricated beach pools is custom-built to bring paradise to your doorstep. Whether you're looking for a romantic escape, a family retreat, or a venue for a private event, our pools blend natural beauty with luxury design.</p>
+</section>
+
+<section class="gallery">
+   
+    <div class="pool-item">
+        <img src="assets/images/pool1.jpg" alt="Secluded private tropical pool with palm trees" loading="lazy">
+        <h3>Secluded Tropical Escape</h3>
+        <p>Perfect for romantic getaways or peaceful retreats.</p>
+    </div>
+
+    <div class="pool-item">
+        <img src="assets/images/pool2.jpg" alt="Luxury beach pool designed for private events and parties" loading="lazy">
+        <h3>Event-Ready Oasis</h3>
+        <p>Designed for small private events, parties, and celebrations.</p>
+    </div>
+
+    <div class="pool-item">
+        <img src="assets/images/pool3.jpg" alt="Luxury VIP pool with spa features and private cabanas" loading="lazy">
+        <h3>Luxury VIP Experience</h3>
+        <p>Premium pool with spa services, private dining, and more.</p>
+    </div>
+
+    <div class="pool-item">
+        <img src="assets/images/pool4.jpg" alt="Family-friendly beach pool with shallow areas for kids" loading="lazy">
+        <h3>Family Beach Retreat</h3>
+        <p>Spacious design perfect for families with kids.</p>
     </div>
 </section>
 
 <footer>
-    <p>Follow us on: <img src="assets/images/instagram-icon-new.png" alt="Instagram Icon"></p>
+    <p>&copy; 2025 Fabricated Beach Pools</p>
+    <p>Follow us on:
+        <a href="https://www.instagram.com/biopool.design" target="_blank">
+            <img src="assets/images/instagram-icon-new.png" alt="Instagram logo" width="16" height="16" style="vertical-align: middle;">
+        </a>
+    </p>
 </footer>
+
+<button id="backToTop" class="back-to-top" onclick="scrollToTop()">⬆️ Back to Top</button>
+
+</div>
+
+<script src="assets/js/script.js"></script>
+<!-- Lightbox Container -->
+<div id="lightbox" class="lightbox">
+    <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+    <img class="lightbox-image" id="lightbox-image">
+</div>
 
 </body>
 </html>
