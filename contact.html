@@ -2,69 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover Fabricated Beach Pools - custom tropical retreats built anywhere. Explore private pools, experiences, and more.">
-    <!-- SEO Meta Tags -->
-    <meta name="keywords" content="contact fabricated beach pools, inquire about private pools, book custom pools Albania, luxury pool inquiries">
-    <!-- Open Graph for Social Media Previews -->
-    <meta property="og:title" content="Contact Fabricated Beach Pools - Start Your Dream Pool Project">
-    <meta property="og:description" content="Get in touch with Fabricated Beach Pools to design and build your private tropical retreat anywhere.">
-    <meta property="og:image" content="https://akauntipbshk.github.io/fabricated-beach-pools/assets/images/beach-header.jpg">
-    <meta property="og:url" content="https://akauntipbshk.github.io/fabricated-beach-pools/contact.html">
-    <meta property="og:type" content="website">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="image" href="assets/images/beach-header.jpg">
-    <title>Fabricated Beach Pools</title>
+    <title>Contact Us - Fabricated Beach Pools</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="icon" href="https://akauntipbshk.github.io/fabricated-beach-pools/favicon.ico" type="image/x-icon">
-</head>   
+    <script src="assets/js/script.js" defer></script>
+</head>
 <body>
 
-<nav>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="pools.html">Our Pools</a></li>
-        <li><a href="experiences.html">Experiences</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav>
+<header>
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="pools.html">Our Pools</a>
+        <a href="experiences.html">Experiences</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
+</header>
 
-<h1>Contact Us</h1>
-<p>Get in touch to design your private paradise.</p>
-
-<form id="contactForm">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required><br>
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required><br>
-
-    <label for="message">Message:</label><br>
-    <textarea id="message" name="message" rows="5" required></textarea><br>
-
-    <button type="submit">Send</button>
-
-    <!-- Thank-you message (hidden by default) -->
-    <p id="formMessage" style="display:none; color:green; margin-top:10px;">
-        Thank you! Your message has been sent.
-    </p>
-</form>
+<section class="content-section">
+    <h1>Contact Us</h1>
+    <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="email" id="email" placeholder="Your Email">
+        <textarea id="message" placeholder="Your Message"></textarea>
+        <button type="submit">Send</button>
+    </form>
+    <div id="formMessage" style="display:none;">Thank you for your message! We'll get back to you soon.</div>
+</section>
 
 <footer>
-    <p>&copy; 2025 Fabricated Beach Pools</p>
-    <p>Follow us on:
-        <a href="https://www.instagram.com/biopool.design" target="_blank">
-            <img src="assets/images/instagram-icon-new.png" alt="Instagram logo" width="16" height="16" style="vertical-align: middle;">
-        </a>
-    </p>
+    <p>Follow us on: <img src="assets/images/instagram-icon-new.png" alt="Instagram Icon"></p>
 </footer>
-
-<button id="backToTop" class="back-to-top" onclick="scrollToTop()">⬆️ Back to Top</button>
-
-<script src="assets/js/script.js"></script>
 
 </body>
 </html>
