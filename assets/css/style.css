@@ -524,6 +524,7 @@ footer img {
         transform: translateX(calc(-400px * 5)); /* Move by 5 images (one full set) */
     }
 }
+/* Mobile padding tweaks */
 @media (max-width: 768px) {
     section {
         padding: 30px 15px;
