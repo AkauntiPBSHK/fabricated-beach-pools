@@ -448,7 +448,8 @@ footer img {
 /* The track that scrolls */
 .carousel-track {
     display: inline-flex;
-    animation: scroll 15s linear infinite;
+    animation: scroll 30s linear infinite;
+    width: calc(400px * 10); /* 5 images x 2 for seamless loop */
 }
 
 /* Individual images in the carousel */
@@ -467,6 +468,6 @@ footer img {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(calc(-400px * 5)); /* Move by 5 images (one full set) */
     }
 }
