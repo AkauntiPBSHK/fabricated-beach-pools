@@ -538,34 +538,77 @@ footer img {
 }
 
 .breadcrumb {
-    list-style: none;
-    padding: 10px 15px;
-    margin: 0;
-    background-color: #f0f8ff;
-    font-size: 14px;
     display: flex;
-    gap: 5px;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 14px 24px;
+    background: linear-gradient(90deg, #FFD700, #FFB347, #87CEEB, #1E90FF);
+    background-size: 400% 400%;
+    animation: oceanWaves 8s infinite alternate ease-in-out;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    list-style: none;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
-.breadcrumb li {
-    display: inline;
+/* Ocean Wave Animation */
+@keyframes oceanWaves {
+    0% { background-position: left; }
+    100% { background-position: right; }
 }
 
 .breadcrumb a {
+    color: white;
     text-decoration: none;
-    color: #009688;
-    font-weight: bold;
+    padding: 6px 14px;
+    border-radius: 6px;
+    transition: all 0.4s ease-in-out;
+    position: relative;
 }
 
+/* Sand Glow Effect on Hover */
 .breadcrumb a:hover {
-    text-decoration: underline;
-    color: #00796b;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(255, 223, 0, 0.8);
+    text-decoration: none;
+    transform: translateY(-2px);
 }
 
-.breadcrumb li:not(:last-child)::after {
-    content: ">";
-    margin: 0 5px;
-    color: #555;
+/* Breadcrumb Items */
+.breadcrumb li {
+    display: flex;
+    align-items: center;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Coconut & Palm Tree Icons 🌴 */
+.breadcrumb li:first-child a::before {
+    content: "🏝️ ";
+    font-size: 18px;
+}
+
+.breadcrumb li:nth-child(2) a::before {
+    content: "🌊 ";
+    font-size: 18px;
+}
+
+/* Wave-Themed Separator */
+.breadcrumb li::after {
+    content: " ~ ";
+    margin: 0 10px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: bold;
+    font-size: 22px;
+}
+
+/* Remove the last separator */
+.breadcrumb li:last-child::after {
+    content: "";
 }
 
 .location-footer {

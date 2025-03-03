@@ -96,8 +96,11 @@ function closeLightbox() {
     document.getElementById('lightbox').style.display = 'none';
 }
 
-document.querySelectorAll('.pool-item picture img').forEach(img => {
-    img.addEventListener('click', () => openLightbox(img.src));
+document.querySelectorAll('.pool-item img').forEach(img => {
+    img.addEventListener('click', () => {
+        const largeSrc = img.getAttribute('data-large-src');
+        openLightbox(largeSrc);
+    });
 });
 
 // Smooth Page Transition on Internal Navigation
