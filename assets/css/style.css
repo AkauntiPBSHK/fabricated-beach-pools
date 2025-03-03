@@ -328,7 +328,6 @@ section::after {
    7. Call to Action
 ================================== */
 .cta-section {
-    background-color: #009688;
     color: white;
     padding: 60px 5%; /* Percentage-based horizontal padding */
     text-align: center;
@@ -337,6 +336,35 @@ section::after {
     box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Subtle shadow to give it depth */
     font-size: 18px; /* Slightly larger default text */
     width: 100%;
+    /* Add background image properties */
+    background-image: url('../images/cta-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    /* Add a dark overlay to ensure text readability */
+    color: white;
+    padding: 60px 5%;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    z-index: 1;
+}
+/* Add this new rule for the overlay */
+.cta-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjustable opacity */
+    z-index: -1;
+}
+/* Make sure the content is positioned above the overlay */
+.cta-section > * {
+    position: relative;
+    z-index: 2;
 }
 
 .cta-section h2 {
@@ -372,10 +400,22 @@ section::after {
     transform: translateY(-3px); /* Slight lift effect */
 }
 
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.3); /* Optional semi-transparent background */
+    border-radius: 8px;
+}
 /* Mobile adjustments */
 @media (max-width: 768px) {
     .cta-section {
+        background-image: url('/assets/images/cta-background.jpg');
         padding: 40px 20px;
+    }
+    
+    .cta-content {
+        padding: 15px;
     }
 
     .cta-section h2 {
