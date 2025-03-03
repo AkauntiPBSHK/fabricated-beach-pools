@@ -310,15 +310,35 @@ document.addEventListener('DOMContentLoaded', () => {
                     behavior: 'smooth'
                 });
             } else {
-                // Fallback for browsers without smooth scrolling
-                const scrollStep = -window.scrollY / 15;
-                const scrollInterval = setInterval(() => {
-                    if (window.scrollY !== 0) {
-                        window.scrollBy(0, scrollStep);
-                    } else {
-                        clearInterval(scrollInterval);
+                // Fallback animation for browsers without native smooth scrolling
+                const duration = 500; // milliseconds
+                const startPosition = window.pageYOffset;
+                const startTime = performance.now();
+                
+                function step(currentTime) {
+                    const elapsedTime = currentTime - startTime;
+                    
+                    // Easing function: easeInOutQuad
+                    const scrollPosition = elapsedTime < duration
+                        ? calculateScrollPosition(elapsedTime, startPosition, -startPosition, duration)
+                        : 0;
+                    
+                    window.scrollTo(0, scrollPosition);
+                    
+                    if (elapsedTime < duration) {
+                        requestAnimationFrame(step);
                     }
-                }, 15);
+                }
+                
+                // Calculate position with easing
+                function calculateScrollPosition(t, b, c, d) {
+                    t /= d/2;
+                    if (t < 1) return c/2*t*t + b;
+                    t--;
+                    return -c/2 * (t*(t-2) - 1) + b;
+                }
+                
+                requestAnimationFrame(step);
             }
         };
         
