@@ -303,7 +303,7 @@ if (backToTopButton) {
     // Function to smoothly scroll back to top
     function smoothScrollToTop() {
         // Animation parameters
-        const duration = 800; // milliseconds - adjust for faster/slower scroll
+        const duration = 600; // milliseconds - adjust for faster/slower scroll
         const startPosition = window.pageYOffset;
         const startTime = performance.now();
 
