@@ -337,7 +337,7 @@ section::after {
     font-size: 18px; /* Slightly larger default text */
     width: 100%;
     /* Add background image properties */
-    background-image: url('../images/cta-background.jpg');
+    background-image: url('/assets/images/cta-background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -360,6 +360,14 @@ section::after {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Adjustable opacity */
     z-index: -1;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.3); /* Optional semi-transparent background */
+    border-radius: 8px;
 }
 /* Make sure the content is positioned above the overlay */
 .cta-section > * {
@@ -400,13 +408,6 @@ section::after {
     transform: translateY(-3px); /* Slight lift effect */
 }
 
-.cta-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.3); /* Optional semi-transparent background */
-    border-radius: 8px;
-}
 /* Mobile adjustments */
 @media (max-width: 768px) {
     .cta-section {
