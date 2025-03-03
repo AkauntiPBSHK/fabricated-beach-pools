@@ -123,3 +123,28 @@ document.querySelectorAll('a').forEach(link => {
         });
     }
 });
+// Function to open lightbox and stop carousel animation
+function openLightbox(imageElement) {
+    const lightbox = document.getElementById('carousel-lightbox');
+    const lightboxImage = document.getElementById('carousel-lightbox-image');
+    
+    // Use the large image if provided, otherwise fallback to the displayed one
+    const largeSrc = imageElement.getAttribute('data-large-src') || imageElement.src;
+    lightboxImage.src = largeSrc;
+    
+    lightbox.style.display = 'flex';
+
+    // Stop the scrolling animation
+    const carouselTrack = document.querySelector('.carousel-track');
+    carouselTrack.style.animationPlayState = 'paused';
+}
+
+// Function to close lightbox and resume animation
+function closeLightbox() {
+    const lightbox = document.getElementById('carousel-lightbox');
+    lightbox.style.display = 'none';
+
+    // Resume scrolling animation
+    const carouselTrack = document.querySelector('.carousel-track');
+    carouselTrack.style.animationPlayState = 'running';
+}

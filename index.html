@@ -73,11 +73,17 @@
 <section class="featured-pools">
     <h2>Explore Our Stunning Pool Creations</h2>
     <div class="carousel">
+        <div id="carousel-lightbox" class="lightbox" role="dialog" aria-label="Enlarged image viewer">
+            <span class="close-lightbox" onclick="closeLightbox()" aria-label="Close">&times;</span>
+            <img class="lightbox-image" id="carousel-lightbox-image" alt="Enlarged pool image">
+        </div>
+                
         <div class="carousel-track">
             <picture>
                 <source srcset="assets/images/pool5.webp" type="image/webp">
                 <img src="assets/images/pool5.jpg" 
                      alt="Modern villa with private beachfront pool and tropical landscaping"
+                     onclick="openLightbox(this)"
                      data-large-src="assets/images/pool5.webp">
             </picture>
 
@@ -85,6 +91,7 @@
                 <source srcset="assets/images/pool6.webp" type="image/webp">
                 <img src="assets/images/pool6.jpg" 
                      alt="Secluded beach pool blending into natural surroundings with sand entry"
+                     onclick="openLightbox(this)"
                      data-large-src="assets/images/pool6.webp">
             </picture>
 
@@ -92,6 +99,7 @@
                 <source srcset="assets/images/pool7.webp" type="image/webp">
                 <img src="assets/images/pool7.jpg" 
                      alt="Small tropical pool with natural rock edge and palm trees"
+                     onclick="openLightbox(this)"
                      data-large-src="assets/images/pool7.webp">
             </picture>
 
@@ -99,6 +107,7 @@
                 <source srcset="assets/images/pool8.webp" type="image/webp">
                 <img src="assets/images/pool8.jpg" 
                      alt="Private beach pool with sandy shoreline and lush garden backdrop"
+                     onclick="openLightbox(this)"
                      data-large-src="assets/images/pool8.webp">
             </picture>
 
@@ -106,6 +115,7 @@
                 <source srcset="assets/images/pool9.webp" type="image/webp">
                 <img src="assets/images/pool9.jpg" 
                      alt="Crystal-clear tropical pool with beach entry and surrounding garden"
+                     onclick="openLightbox(this)"
                      data-large-src="assets/images/pool9.webp">
             </picture>
 
@@ -114,6 +124,7 @@
                 <source srcset="assets/images/pool5.webp" type="image/webp">
                 <img src="assets/images/pool5.jpg" 
                      alt="Modern villa with private beachfront pool and tropical landscaping"
+                     onclick="openLightbox(this)"
                      data-large-src="assets/images/pool5.webp">
             </picture>
 
@@ -121,6 +132,7 @@
                 <source srcset="assets/images/pool6.webp" type="image/webp">
                 <img src="assets/images/pool6.jpg" 
                      alt="Secluded beach pool blending into natural surroundings with sand entry"
+                     onclick="openLightbox(this)"
                      data-large-src="assets/images/pool6.webp">
             </picture>
 
@@ -128,6 +140,7 @@
                 <source srcset="assets/images/pool7.webp" type="image/webp">
                 <img src="assets/images/pool7.jpg" 
                      alt="Small tropical pool with natural rock edge and palm trees"
+                     onclick="openLightbox(this)"
                      data-large-src="assets/images/pool7.webp">
             </picture>
 
@@ -135,6 +148,7 @@
                 <source srcset="assets/images/pool8.webp" type="image/webp">
                 <img src="assets/images/pool8.jpg" 
                      alt="Private beach pool with sandy shoreline and lush garden backdrop"
+                     onclick="openLightbox(this)"
                      data-large-src="assets/images/pool8.webp">
             </picture>
 
@@ -142,6 +156,7 @@
                 <source srcset="assets/images/pool9.webp" type="image/webp">
                 <img src="assets/images/pool9.jpg" 
                      alt="Crystal-clear tropical pool with beach entry and surrounding garden"
+                     onclick="openLightbox(this)"
                      data-large-src="assets/images/pool9.webp">
             </picture>
         </div>
