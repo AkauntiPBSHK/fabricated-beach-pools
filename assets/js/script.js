@@ -292,75 +292,64 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     // BACK TO TOP BUTTON
     // ==========================================
-    
-    const backToTopButton = getElement('#backToTop');
-    
-    if (backToTopButton) {
-        // Initially hide the button
-        backToTopButton.style.display = 'none';
-        
-        /**
-         * Smooth scroll to top of page
-         */
-        const smoothScrollToTop = () => {
-            // Use native smooth scrolling if supported
-            if ('scrollBehavior' in document.documentElement.style) {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
+    // Select the back to top button
+const backToTopButton = document.getElementById('backToTop');
+
+// Ensure the button exists before proceeding
+if (backToTopButton) {
+    // Initially hide the button
+    backToTopButton.style.display = 'none';
+
+    // Function to smoothly scroll back to top
+    function smoothScrollToTop() {
+        // Animation parameters
+        const duration = 800; // milliseconds - adjust for faster/slower scroll
+        const startPosition = window.pageYOffset;
+        const startTime = performance.now();
+
+        // Animation step function
+        function animateScroll(currentTime) {
+            // Calculate elapsed time
+            const elapsedTime = currentTime - startTime;
+            
+            // Calculate current scroll position using easing
+            if (elapsedTime < duration) {
+                // Apply smooth easing function (easeOutCubic)
+                const progress = 1 - Math.pow(1 - elapsedTime / duration, 3);
+                window.scrollTo(0, startPosition * (1 - progress));
+                
+                // Continue animation
+                requestAnimationFrame(animateScroll);
             } else {
-                // Fallback animation for browsers without native smooth scrolling
-                const duration = 500; // milliseconds
-                const startPosition = window.pageYOffset;
-                const startTime = performance.now();
-                
-                function step(currentTime) {
-                    const elapsedTime = currentTime - startTime;
-                    
-                    // Easing function: easeInOutQuad
-                    const scrollPosition = elapsedTime < duration
-                        ? calculateScrollPosition(elapsedTime, startPosition, -startPosition, duration)
-                        : 0;
-                    
-                    window.scrollTo(0, scrollPosition);
-                    
-                    if (elapsedTime < duration) {
-                        requestAnimationFrame(step);
-                    }
-                }
-                
-                // Calculate position with easing
-                function calculateScrollPosition(t, b, c, d) {
-                    t /= d/2;
-                    if (t < 1) return c/2*t*t + b;
-                    t--;
-                    return -c/2 * (t*(t-2) - 1) + b;
-                }
-                
-                requestAnimationFrame(step);
+                // Ensure we end at exact top
+                window.scrollTo(0, 0);
             }
-        };
-        
-        // Show/hide button based on scroll position
-        const toggleBackToTopButton = () => {
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        }
+
+        // Start the animation
+        requestAnimationFrame(animateScroll);
+    }
+
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', function() {
+        // Show button when scrolled down 300px or more
+        if (window.pageYOffset > 300) {
+            if (backToTopButton.style.display !== 'block') {
                 backToTopButton.style.display = 'block';
-            } else {
+            }
+        } else {
+            if (backToTopButton.style.display !== 'none') {
                 backToTopButton.style.display = 'none';
             }
-        };
-        
-        // Add scroll event listener
-        window.addEventListener('scroll', toggleBackToTopButton);
-        
-        // Add click event to button
-        backToTopButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            smoothScrollToTop();
-        });
-    }
-    
+        }
+    });
+
+    // Add click event to button
+    backToTopButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        smoothScrollToTop();
+    });
+}
     // ==========================================
     // PAGE TRANSITIONS
     // ==========================================
@@ -392,85 +381,4 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     
     setupPageTransitions();
-});// ==========================================
-// BACK TO TOP BUTTON
-// ==========================================
-
-function setupBackToTop() {
-    const backToTopButton = document.getElementById('backToTop');
-    
-    if (!backToTopButton) {
-        console.log('Back to top button not found in the DOM');
-        return;
-    }
-    
-    // Initially hide the button
-    backToTopButton.style.display = 'none';
-    
-    // Function to handle smooth scrolling
-    function smoothScrollToTop() {
-        const duration = 500; // milliseconds
-        const startPosition = window.pageYOffset;
-        const startTime = performance.now();
-        
-        function step(currentTime) {
-            const elapsedTime = currentTime - startTime;
-            
-            if (elapsedTime < duration) {
-                // easeInOutQuad easing function
-                let t = elapsedTime / (duration / 2);
-                let scrollPosition;
-                
-                if (t < 1) {
-                    scrollPosition = (startPosition / 2) * t * t;
-                } else {
-                    t--;
-                    scrollPosition = -startPosition / 2 * (t * (t - 2) - 1);
-                }
-                
-                window.scrollTo(0, startPosition - scrollPosition);
-                requestAnimationFrame(step);
-            } else {
-                window.scrollTo(0, 0);
-            }
-        }
-        
-        requestAnimationFrame(step);
-    }
-    
-    // Show/hide button based on scroll position
-    function toggleBackToTopButton() {
-        if (window.pageYOffset > 300) {
-            backToTopButton.style.display = 'block';
-        } else {
-            backToTopButton.style.display = 'none';
-        }
-    }
-    
-    // Initial check on page load
-    toggleBackToTopButton();
-    
-    // Add scroll event listener
-    window.addEventListener('scroll', toggleBackToTopButton);
-    
-    // Add click event to button
-    backToTopButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        // Use native smooth scrolling if supported
-        if ('scrollBehavior' in document.documentElement.style) {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        } else {
-            // Use custom implementation for browsers without support
-            smoothScrollToTop();
-        }
-    });
-    
-    console.log('Back to top button initialized');
-}
-
-// Call the setup function
-setupBackToTop();
+});
