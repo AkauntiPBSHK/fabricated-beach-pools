@@ -392,4 +392,85 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     
     setupPageTransitions();
-});
+});// ==========================================
+// BACK TO TOP BUTTON
+// ==========================================
+
+function setupBackToTop() {
+    const backToTopButton = document.getElementById('backToTop');
+    
+    if (!backToTopButton) {
+        console.log('Back to top button not found in the DOM');
+        return;
+    }
+    
+    // Initially hide the button
+    backToTopButton.style.display = 'none';
+    
+    // Function to handle smooth scrolling
+    function smoothScrollToTop() {
+        const duration = 500; // milliseconds
+        const startPosition = window.pageYOffset;
+        const startTime = performance.now();
+        
+        function step(currentTime) {
+            const elapsedTime = currentTime - startTime;
+            
+            if (elapsedTime < duration) {
+                // easeInOutQuad easing function
+                let t = elapsedTime / (duration / 2);
+                let scrollPosition;
+                
+                if (t < 1) {
+                    scrollPosition = (startPosition / 2) * t * t;
+                } else {
+                    t--;
+                    scrollPosition = -startPosition / 2 * (t * (t - 2) - 1);
+                }
+                
+                window.scrollTo(0, startPosition - scrollPosition);
+                requestAnimationFrame(step);
+            } else {
+                window.scrollTo(0, 0);
+            }
+        }
+        
+        requestAnimationFrame(step);
+    }
+    
+    // Show/hide button based on scroll position
+    function toggleBackToTopButton() {
+        if (window.pageYOffset > 300) {
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    }
+    
+    // Initial check on page load
+    toggleBackToTopButton();
+    
+    // Add scroll event listener
+    window.addEventListener('scroll', toggleBackToTopButton);
+    
+    // Add click event to button
+    backToTopButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Use native smooth scrolling if supported
+        if ('scrollBehavior' in document.documentElement.style) {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        } else {
+            // Use custom implementation for browsers without support
+            smoothScrollToTop();
+        }
+    });
+    
+    console.log('Back to top button initialized');
+}
+
+// Call the setup function
+setupBackToTop();
