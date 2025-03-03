@@ -501,32 +501,29 @@ footer img {
 /* The track that scrolls */
 .carousel-track {
     display: flex;
-    justify-content: flex-start;
+    gap: 20px; /* This controls spacing between images */
+    justify-content: flex-start; /* Images should flow left-to-right */
     align-items: center;
-    gap: 10px; /* Increase spacing between images */
-    animation: scroll 30s linear infinite;
     overflow: hidden;
     padding: 10px 0;
+    animation: scroll 30s linear infinite;
 }
 
 .carousel-track picture {
-    flex: 0 0 auto;
+    flex: 0 0 300px; /* Consistent width for all images */
+    height: 200px;   /* Consistent height for all images */
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 320px; /* Set a standard width for each image */
-    height: 200px; /* Maintain a fixed height */
-    overflow: hidden;
-    border-radius: 10px;
-    background: white;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    overflow: hidden; /* Prevents oversized images from breaking layout */
+    border-radius: 10px; /* Optional */
 }
 
 .carousel-track img {
     max-width: 100%;
     height: 100%;
     object-fit: cover; /* Ensures images fill their space nicely */
-    border-radius: 10px;
+    cursor: pointer; /* Shows clickable cursor */
 }
 
 /* Optional: Scroll animation (you can slow this down if it feels too fast) */
@@ -619,32 +616,33 @@ footer img {
     z-index: 1001;
 }
 
-.lightbox {
+#carousel-lightbox {
     display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    background-color: rgba(0, 0, 0, 0.9); /* Dark background */
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 9999; /* Ensure it's above all content */
 }
 
-.lightbox-image {
+#carousel-lightbox img {
     max-width: 90%;
     max-height: 90%;
-    object-fit: contain;
+    object-fit: contain; /* Ensures the whole image is visible */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     border-radius: 10px;
 }
 
-.close-lightbox {
+#carousel-lightbox .close-lightbox {
     position: absolute;
     top: 20px;
-    right: 30px;
+    right: 20px;
     font-size: 30px;
-    font-weight: bold;
     color: white;
     cursor: pointer;
+    z-index: 10000; /* Always above the image */
 }
