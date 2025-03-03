@@ -542,22 +542,22 @@ footer img {
     align-items: center;
     justify-content: flex-start;
     gap: 12px;
-    padding: 14px 24px;
-    background: linear-gradient(90deg, #FFD700, #FFB347, #87CEEB, #1E90FF);
-    background-size: 400% 400%;
-    animation: oceanWaves 8s infinite alternate ease-in-out;
+    padding: 12px 24px;
+    background: linear-gradient(45deg, #00796B, #00BFA6, #00796B);
+    background-size: 300% 300%;
+    animation: gradientAnimation 8s infinite alternate;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     list-style: none;
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
-    color: white;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Ocean Wave Animation */
-@keyframes oceanWaves {
+/* Animation for Smooth Gradient Transition */
+@keyframes gradientAnimation {
     0% { background-position: left; }
     100% { background-position: right; }
 }
@@ -571,10 +571,10 @@ footer img {
     position: relative;
 }
 
-/* Sand Glow Effect on Hover */
+/* Neon Hover Effect */
 .breadcrumb a:hover {
     background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 15px rgba(255, 223, 0, 0.8);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
     text-decoration: none;
     transform: translateY(-2px);
 }
@@ -583,27 +583,17 @@ footer img {
 .breadcrumb li {
     display: flex;
     align-items: center;
+    color: white;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* Coconut & Palm Tree Icons 🌴 */
-.breadcrumb li:first-child a::before {
-    content: "🏝️ ";
-    font-size: 18px;
-}
-
-.breadcrumb li:nth-child(2) a::before {
-    content: "🌊 ";
-    font-size: 18px;
-}
-
-/* Wave-Themed Separator */
+/* Arrow Separator */
 .breadcrumb li::after {
-    content: " ~ ";
+    content: "→";
     margin: 0 10px;
     color: rgba(255, 255, 255, 0.8);
     font-weight: bold;
-    font-size: 22px;
+    font-size: 20px;
 }
 
 /* Remove the last separator */
