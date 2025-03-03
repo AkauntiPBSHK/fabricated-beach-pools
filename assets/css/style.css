@@ -648,3 +648,32 @@ footer img {
     align-items: center;
     z-index: 1000;
 }
+/* Make Close Button (X) Bigger and More Visible */
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 15px;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    z-index: 1100;
+}
+
+/* Hover Effect */
+.close-lightbox:hover {
+    background: rgba(255, 255, 255, 0.8);
+    color: black;
+}
+
+/* Ensure the Close Button is Clickable */
+.lightbox img {
+    max-width: 90%;
+    max-height: 80vh;
+    position: relative;
+    z-index: 1001;
+}

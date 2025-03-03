@@ -90,8 +90,14 @@ function openLightbox(src) {
     const lightboxImage = document.getElementById('lightbox-image');
     lightboxImage.src = src;
     lightbox.style.display = 'flex';
-}
 
+    // Close lightbox when clicking outside the image
+    lightbox.addEventListener('click', function(event) {
+        if (event.target === lightbox || event.target.classList.contains('close-lightbox')) {
+            closeLightbox();
+        }
+    });
+}
 function closeLightbox() {
     document.getElementById('lightbox').style.display = 'none';
 }
@@ -103,6 +109,7 @@ document.querySelectorAll('.pool-item img').forEach(img => {
     });
 });
 
+document.querySelector('.close-lightbox').addEventListener('click', closeLightbox);
 // Smooth Page Transition on Internal Navigation
 document.querySelectorAll('a').forEach(link => {
     if (link.hostname === window.location.hostname && link.href !== window.location.href) {
