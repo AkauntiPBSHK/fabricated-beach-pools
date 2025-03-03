@@ -981,3 +981,76 @@ footer img {
     margin-bottom: 15px;
     line-height: 1.6;
 }
+/* Privacy Statement and Response Time Styling */
+.response-time {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(0, 150, 136, 0.08);
+    padding: 10px 15px;
+    border-radius: 6px;
+    color: #00796b;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.response-time svg {
+    flex-shrink: 0;
+    color: #00796b;
+}
+
+.privacy-statement {
+    margin-top: 25px;
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.privacy-statement a {
+    color: #009688;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.privacy-statement a:hover {
+    color: #00796b;
+    text-decoration: underline;
+}
+
+.form-disclaimer {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.form-disclaimer svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: #009688;
+}
+
+.form-info {
+    margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+    .form-disclaimer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .response-time {
+        text-align: center;
+        justify-content: center;
+    }
+}
