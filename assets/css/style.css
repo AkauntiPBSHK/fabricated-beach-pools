@@ -491,21 +491,21 @@ footer img {
     position: relative;
     max-width: 100%;
     margin: 0 auto;
+    white-space: nowrap;
     background: white;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     border-radius: 10px;
     padding: 10px 0;
-    white-space: nowrap; /* This ensures all images are in a row */
+    white-space: nowrap;
 }
-
 /* The track that scrolls */
 .carousel-track {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 30px; /* Increase spacing between images */
+    gap: 10px; /* Increase spacing between images */
     animation: scroll 30s linear infinite;
-    min-width: fit-content; /* Fit the track width to the images */
+    overflow: hidden;
     padding: 10px 0;
 }
 
@@ -514,8 +514,12 @@ footer img {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 300px; /* Set a standard width for each image */
+    width: 320px; /* Set a standard width for each image */
     height: 200px; /* Maintain a fixed height */
+    overflow: hidden;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 .carousel-track img {
