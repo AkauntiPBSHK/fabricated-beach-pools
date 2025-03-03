@@ -500,18 +500,30 @@ footer img {
 
 /* The track that scrolls */
 .carousel-track {
-    display: inline-flex;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 10px 0;
     animation: scroll 30s linear infinite;
     width: calc(400px * 10); /* 5 images x 2 for seamless loop */
 }
 
+.carousel-track picture {
+    flex: 0 0 auto;
+    margin: 0 15px; /* Space between images */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Individual images in the carousel */
 .carousel img {
-    width: 100%;
-    max-width: 400px;  /* You can increase this if you want bigger images */
-    height: 250px;     /* Fixed height for uniform appearance */
+    max-width: 100%;  /* You can increase this if you want bigger images */
+    height: auto;     /* Fixed height for uniform appearance */
     object-fit: cover; /* Ensures images fill the space nicely without distortion */
-    border-radius: 8px;
+    border-radius: 10px;
     margin: 0 10px;
 }
 
