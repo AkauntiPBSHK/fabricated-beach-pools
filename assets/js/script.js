@@ -96,7 +96,7 @@ function closeLightbox() {
     document.getElementById('lightbox').style.display = 'none';
 }
 
-document.querySelectorAll('.pool-item img').forEach(img => {
+document.querySelectorAll('.pool-item picture img').forEach(img => {
     img.addEventListener('click', () => openLightbox(img.src));
 });
 
