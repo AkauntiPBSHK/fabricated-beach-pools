@@ -1,5 +1,5 @@
 /**
- * Fabricated Beach Pools
+ * BioPool
  * Main JavaScript functionality
  */
 

@@ -14,11 +14,13 @@ html {
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f0f8ff;
+    background-color: #e6f2f5; /* Light blue-gray that feels aquatic */
     color: #333;
     padding: 0 15px;
     opacity: 0;
     animation: fadeIn 0.5s forwards;
+    width: 100%;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
 /* ==================================
