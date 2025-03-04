@@ -328,27 +328,18 @@ section::after {
    7. Call to Action
 ================================== */
 .cta-section {
-    color: white;
-    padding: 60px 5%; /* Percentage-based horizontal padding */
-    text-align: center;
-    margin: 0; /* Remove margin */
-    border-radius: 0; /* Remove border-radius for full width */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Subtle shadow to give it depth */
-    font-size: 18px; /* Slightly larger default text */
-    width: 100%;
     /* Add background image properties */
-    background-image: url('/assets/images/cta-background.jpg');
+    background-image: url('../assets/images/cta-background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
     /* Add a dark overlay to ensure text readability */
     color: white;
-    padding: 60px 5%;
+    padding: 80px 5%;
     text-align: center;
     margin: 0;
     width: 100%;
-    z-index: 1;
 }
 /* Add this new rule for the overlay */
 .cta-section::before {
@@ -358,63 +349,61 @@ section::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Adjustable opacity */
-    z-index: -1;
+    background: rgba(0, 0, 0, 0.5); /* Fallback for browsers that don't support gradients */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)); /* Gradient overlay looks more natural */
+    z-index: 1;
 }
 
 .cta-content {
+    position: relative;
+    z-index: 2; /* Places content above the overlay */
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.3); /* Optional semi-transparent background */
+    /* Remove the background color completely or make it much more transparent */
+    background-color: rgba(0, 0, 0, 0.2); /* Very subtle background */
+    padding: 25px;
     border-radius: 8px;
-}
-/* Make sure the content is positioned above the overlay */
-.cta-section > * {
-    position: relative;
-    z-index: 2;
 }
 
 .cta-section h2 {
-    font-size: 32px; /* Bigger and bolder heading */
-    margin-bottom: 15px;
+    font-size: 36px; /* Bigger and bolder heading */
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     text-transform: uppercase; /* Optional for luxury vibe */
     letter-spacing: 1px;
 }
 
 .cta-section p {
     font-size: 18px;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     line-height: 1.6; /* Improve readability */
 }
-
+/* Make the button stand out more */
 .cta-button {
-    background-color: #004d40;
+    background-color: #00bfa5;
     color: white;
     text-decoration: none;
     padding: 14px 30px; /* Slightly larger button */
-    border-radius: 5px;
+    border-radius: 6px;
     font-size: 18px;
+    font-weight: 600;
     transition: background-color 0.3s, transform 0.2s ease;
     display: inline-block;
-    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .cta-button:hover {
-    background-color: #00796b;
-    transform: translateY(-3px); /* Slight lift effect */
+    background-color: #009688;
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
-    .cta-section {
-        background-image: url('/assets/images/cta-background.jpg');
-        padding: 40px 20px;
-    }
-    
     .cta-content {
         padding: 15px;
     }
