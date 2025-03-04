@@ -329,7 +329,7 @@ section::after {
 ================================== */
 .cta-section {
     /* Add background image properties */
-    background-image: url('../assets/images/cta-background.jpg');
+    background-image: url('../assets/images/cta-background.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
