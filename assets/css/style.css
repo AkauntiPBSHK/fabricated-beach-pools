@@ -1084,3 +1084,18 @@ footer img {
         justify-content: center;
     }
 }
+
+/* ==================================
+   20. Pool Dashboard
+================================== */
+.dashboard-link {
+    background-color: #00bfa5;
+    padding: 8px 15px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dashboard-link:hover {
+    background-color: #00796b;
+    transform: translateY(-2px);
+}
