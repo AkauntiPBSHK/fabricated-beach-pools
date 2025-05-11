@@ -195,6 +195,38 @@ nav a:hover {
 }
 
 /* ==================================
+   20. Pool Dashboard
+================================== */
+/* Make dashboard link more prominent */
+.dashboard-link {
+    background-color: #ffab00 !important; /* Orange color to create contrast */
+    color: #004d40 !important; /* Dark teal text */
+    padding: 8px 15px !important;
+    border-radius: 50px !important;
+    margin-left: 10px !important;
+    font-weight: bold !important;
+    border: 2px solid white !important;
+    display: inline-block !important;
+}
+
+.dashboard-link:hover {
+    background-color: white !important;
+    color: #004d40 !important;
+    transform: translateY(-2px) !important;
+    text-decoration: none !important;
+}
+
+/* Ensure dashboard link appears in mobile menu */
+@media (max-width: 768px) {
+    nav ul.show-menu .dashboard-link {
+        display: inline-block !important;
+        margin: 10px auto !important;
+        padding: 10px 20px !important;
+        width: auto !important;
+    }
+}
+
+/* ==================================
    4. Sections (General)
 ================================== */
 section {
@@ -1083,19 +1115,4 @@ footer img {
         text-align: center;
         justify-content: center;
     }
-}
-
-/* ==================================
-   20. Pool Dashboard
-================================== */
-.dashboard-link {
-    background-color: #00bfa5;
-    padding: 8px 15px;
-    border-radius: 50px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.dashboard-link:hover {
-    background-color: #00796b;
-    transform: translateY(-2px);
 }
